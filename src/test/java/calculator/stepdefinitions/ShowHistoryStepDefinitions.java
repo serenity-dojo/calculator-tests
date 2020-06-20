@@ -1,24 +1,32 @@
 package calculator.stepdefinitions;
 
+import calculator.actions.HistoryActions;
 import calculator.domain.MathsOperation;
 import calculator.domain.RecordedOperation;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import net.thucydides.core.annotations.Steps;
+import org.assertj.core.api.Assertions;
 
 import java.util.List;
 import java.util.Map;
 
 public class ShowHistoryStepDefinitions {
 
+    @Steps
+    HistoryActions historyActions;
+
     @DataTableType
     public RecordedOperation convert(Map<String, String> tableRow) {
         return new RecordedOperation(
-                tableRow.get("Operation"),
+                tableRow.get("Expression"),
                 tableRow.get("Result")
         );
     }
 
-    @Given("the calculation history should contain:")
-    public void matt_a_maths_student_has_opened_the_calculator(List<RecordedOperation> history) {
+    @Then("the calculation history should contain:")
+    public void the_calculation_history_should_contain(List<RecordedOperation> expectedHistory) {
+        Assertions.assertThat(historyActions.history()).containsExactlyElementsOf(expectedHistory);
     }
 }

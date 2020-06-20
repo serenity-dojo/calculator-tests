@@ -1,5 +1,7 @@
 package calculator.domain;
 
+import java.util.Objects;
+
 public class RecordedOperation {
     private final String operation;
     private final String result;
@@ -9,11 +11,23 @@ public class RecordedOperation {
         this.result = result;
     }
 
-    public String getOperation() {
-        return operation;
+    @Override
+    public String toString() {
+        return operation + " = " + result;
     }
 
-    public String getResult() {
-        return result;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RecordedOperation that = (RecordedOperation) o;
+        return Objects.equals(operation, that.operation) &&
+                Objects.equals(result, that.result);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(operation, result);
+    }
+
 }

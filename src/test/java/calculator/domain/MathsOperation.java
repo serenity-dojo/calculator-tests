@@ -22,4 +22,9 @@ public class MathsOperation {
     public String getRightOperand() {
         return rightOperand;
     }
+
+    @Override
+    public String toString() {
+        return leftOperand + " "  + operator + " " + rightOperand;
+    }
 }

@@ -1,3 +1,4 @@
+@curent
 Feature: Show history
 
   As a primary school maths studentI want to see what calculations I have already done
