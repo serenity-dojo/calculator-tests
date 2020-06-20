@@ -1,6 +1,5 @@
 package calculator.stepdefinitions;
 
-import calculator.domain.MathsOperation;
 import calculator.domain.RecordedOperation;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
