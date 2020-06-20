@@ -1,10 +1,8 @@
 package calculator.stepdefinitions;
 
 import calculator.actions.HistoryActions;
-import calculator.domain.MathsOperation;
 import calculator.domain.RecordedOperation;
 import io.cucumber.java.DataTableType;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import net.thucydides.core.annotations.Steps;
 import org.assertj.core.api.Assertions;
