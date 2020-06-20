@@ -13,7 +13,7 @@ public class CalculatorStepDefinitions {
     public void matt_a_maths_student_has_opened_the_calculator() {
     }
 
-    @When("Matt performs the following calculation:")
+    @When("^Matt (?:performs|has performed) the following calculations?:$")
     public void matt_performs_the_following_calculation(List<Map<String, String>> operations) {
     }
 
