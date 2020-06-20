@@ -28,14 +28,6 @@ Feature: Perform Calculations
       | 10           | /        | 4             | 2.5    |
       | 2            | *        | 2.5           | 5      |
 
-  Scenario Outline: Perform more calculations
-    When Matt calculates <Calculation>
-    Then he should see a result of <Result>
-    Examples:
-      | Calculation | Result |
-      | 1 + 2       | 3      |
-      | 2 * 4       | 8      |
-
   Scenario Outline: Reporting invalid inputs
     When Matt performs the following calculation:
       | Left Operand   | Operator   | Right Operand   |
