@@ -1,5 +1,7 @@
 package calculator.stepdefinitions;
 
+import calculator.domain.MathsOperation;
+import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,8 +15,17 @@ public class CalculatorStepDefinitions {
     public void matt_a_maths_student_has_opened_the_calculator() {
     }
 
-    @When("Matt performs the following calculation:")
-    public void matt_performs_the_following_calculation(List<Map<String, String>> operations) {
+    @DataTableType
+    public MathsOperation convert(Map<String, String> tableRow) {
+        return new MathsOperation(
+                tableRow.get("Left Operand"),
+                tableRow.get("Operator"),
+                tableRow.get("Right Operand")
+        );
+    }
+
+    @When("^Matt (?:performs|has performed) the following calculations?:$")
+    public void matt_performs_the_following_calculation(List<MathsOperation> operations) {
     }
 
     @Then("he should see a result of {string}")
