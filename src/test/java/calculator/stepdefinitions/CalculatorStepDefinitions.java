@@ -1,6 +1,5 @@
 package calculator.stepdefinitions;
 
-import calculator.actions.CalculaterForm;
 import calculator.actions.CalculatorActions;
 import calculator.domain.MathsOperation;
 import io.cucumber.java.DataTableType;
@@ -42,6 +41,5 @@ public class CalculatorStepDefinitions {
     @Then("he should see a result of {string}")
     public void he_should_see_a_result_of(String expectedResult) {
         Assertions.assertThat(calculator.result()).isEqualTo(expectedResult);
-
     }
 }
