@@ -30,4 +30,3 @@ Feature: Show history
       | 3 * 6      | 18     |
       | 2 - 4      | -2     |
       | 1 + 2      | 3      |
-

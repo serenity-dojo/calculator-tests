@@ -3,6 +3,9 @@ package calculator.actions;
 import calculator.domain.RecordedOperation;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
+import org.openqa.selenium.By;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryActions extends UIInteractionSteps {
@@ -17,5 +20,4 @@ public class HistoryActions extends UIInteractionSteps {
                 row.find(HistoryPanel.RESULT).getText()
         );
     }
-
 }

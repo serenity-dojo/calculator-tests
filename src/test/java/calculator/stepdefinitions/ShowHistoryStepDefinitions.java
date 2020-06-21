@@ -10,10 +10,9 @@ import org.assertj.core.api.Assertions;
 import java.util.List;
 import java.util.Map;
 
-public class ShowHistoryStepDefinitions {
+import static org.assertj.core.api.Assertions.assertThat;
 
-    @Steps
-    HistoryActions historyActions;
+public class ShowHistoryStepDefinitions {
 
     @DataTableType
     public RecordedOperation convert(Map<String, String> tableRow) {
@@ -23,8 +22,11 @@ public class ShowHistoryStepDefinitions {
         );
     }
 
+    @Steps
+    HistoryActions historyActions;
+
     @Then("the calculation history should contain:")
     public void the_calculation_history_should_contain(List<RecordedOperation> expectedHistory) {
-        Assertions.assertThat(historyActions.history()).containsExactlyElementsOf(expectedHistory);
+        assertThat(historyActions.history()).containsExactlyElementsOf(expectedHistory);
     }
 }
