@@ -4,6 +4,7 @@ import calculator.domain.MathsOperation;
 import com.paulhammant.ngwebdriver.ByAngular;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Step;
+import org.assertj.core.api.Assertions;
 
 import static calculator.actions.CalculaterForm.*;
 
