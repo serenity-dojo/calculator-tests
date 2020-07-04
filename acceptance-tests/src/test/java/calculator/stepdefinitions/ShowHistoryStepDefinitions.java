@@ -5,7 +5,6 @@ import calculator.domain.RecordedOperation;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Then;
 import net.thucydides.core.annotations.Steps;
-import org.assertj.core.api.Assertions;
 
 import java.util.List;
 import java.util.Map;
